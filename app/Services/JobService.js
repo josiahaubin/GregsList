@@ -23,6 +23,9 @@ function _setState(propName, data) {
 
 
 export default class JobService {
+  bid(id) {
+    throw new Error("Method not implemented.");
+  }
   constructor() {
     // console.log("hello from js")
   }
@@ -41,6 +44,32 @@ export default class JobService {
       .then(res => {
         let jobData = res.data.data.map(j => new Job(j))
         _setState('jobs', jobData)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
+
+  addJob(newData) {
+    _jobApi.post('', newData)
+      .then(res => {
+        _state.jobs.push(res.data.data)
+        _setState('jobs', _state.jobs)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
+
+  deleteJob(id) {
+    _jobApi.delete(id)
+      .then(res => {
+        let index = _state.jobs.findIndex(j => j._id == id)
+        _state.jobs.splice(index, 1)
+        _setState('jobs', _state.jobs)
+      })
+      .catch(err => {
+        console.error(err)
       })
   }
 }
