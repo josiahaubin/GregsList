@@ -23,9 +23,6 @@ function _setState(propName, data) {
 
 
 export default class JobService {
-  bid(id) {
-    throw new Error("Method not implemented.");
-  }
   constructor() {
     // console.log("hello from js")
   }
@@ -70,6 +67,19 @@ export default class JobService {
       })
       .catch(err => {
         console.error(err)
+      })
+  }
+
+  bid(id) {
+    let job = _state.jobs.find(j => j._id == id)
+    job.rate++
+
+    _jobApi.put(id, { rate: job.rate })
+      .then(res => {
+        _setState('jobs', _state.jobs)
+      })
+      .catch(err => {
+        console.log(err)
       })
   }
 }
