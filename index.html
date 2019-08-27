@@ -48,7 +48,7 @@
                     <div class="form-group">
                         <label for="description">Description</label>
                         <input type="text" class="form-control" id="description" placeholder="Description"
-                            name="description"></textarea>
+                            name="description">
                     </div>
                 </form>
             </div>
@@ -84,13 +84,58 @@
                     <div class="form-group">
                         <label for="description">Description</label>
                         <input type="text" class="form-control" id="description" placeholder="Description"
-                            name="description"></textarea>
+                            name="description">
                     </div>
                 </form>
                 <div class="col-12">
                     <h3>Available Jobs</h3>
                     <hr>
                     <div class="row" id="job-cards">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h1>House</h1>
+                <form class="d-flex" onsubmit='app.controllers.houseController.addHouse(event)'>
+                    <div class="form-group">
+                        <label for="bedrooms">Bedrooms</label>
+                        <input type="number" class="form-control" id="bedrooms" placeholder="Bedrooms" name="bedrooms">
+                        <button class="btn btn-success" type="submit">Create</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="bathrooms">Bathrooms</label>
+                        <input type="number" class="form-control" id="bathrooms" placeholder="Bathrooms"
+                            name="bathrooms">
+                    </div>
+                    <div class="form-group">
+                        <label for="imgUrl">Img Url</label>
+                        <input type="text" class="form-control" id="imgUrl" placeholder="Img Url" name="imgUrl">
+                    </div>
+                    <div class="form-group">
+                        <label for="levels">Levels</label>
+                        <input type="text" class="form-control" id="levels" placeholder="Levels" name="levels">
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input type="number" class="form-control" id="year" placeholder="Year" name="year">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" class="form-control" id="price" placeholder="Price" name="price">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" class="form-control" id="description" placeholder="Description"
+                            name="description">
+                    </div>
+                </form>
+                <div class="col-12">
+                    <h3>Available Houses</h3>
+                    <hr>
+                    <div class="row" id="house-cards">
 
                     </div>
                 </div>
