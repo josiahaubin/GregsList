@@ -9,7 +9,11 @@ export default class Job {
 
   get Template() {
     return `
-    
+      <div class="col-4">
+        <h5>${this.company} - ${this.jobTitle}</h5>
+        <h6>Hours: ${this.hours} - Hourly Rate: ${this.rate}</h6>
+        <p>${this.description}</p>
+      </div>
     `
   }
 }
