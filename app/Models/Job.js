@@ -10,7 +10,7 @@ export default class Job {
 
   get Template() {
     return `
-      <div class="col-3">
+      <div class="col-3 cardHover">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">${this.company} - ${this.jobTitle}</h5>

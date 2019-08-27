@@ -4,3 +4,6 @@
 .bg-grey {
   background-color: lightgrey;
 }
+.cardHover:hover{
+  box-shadow: 1px 1px 1px 1px
+}

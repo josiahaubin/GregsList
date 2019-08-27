@@ -12,7 +12,7 @@ export default class House {
 
   get Template() {
     return `
-        <div class="col-3">
+        <div class="col-3 cardHover">
             <div class="card">
                 <img class="card-img-top" src="${this.imgUrl}" alt="Card image cap">
                 <div class="card-body">
