@@ -21,4 +21,26 @@ export default class HouseController {
     //NOTE Retrieve data
     _houseService.getApiHouse()
   }
+
+  addHouse(e) {
+    e.preventDefault()
+
+    let form = e.target
+
+    let newData = {
+      bedrooms: form.bedrooms.value,
+      bathrooms: form.bathrooms.value,
+      imgUrl: form.imgUrl.value,
+      levels: form.levels.value,
+      year: form.year.value,
+      price: form.price.value,
+      description: form.description.value
+    }
+
+    _houseService.addHouse(newData)
+    form.reset()
+  }
+  delete(id) {
+    _houseService.deleteHome(id)
+  }
 }

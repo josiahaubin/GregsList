@@ -38,5 +38,27 @@ export default class HouseService {
         let houseData = res.data.data.map(h => new House(h))
         _setState("houses", houseData)
       })
+      .catch(err => {
+        console.error(err)
+      })
+  }
+
+  addHouse(newData) {
+    _houseApi.post('', newData)
+      .then(res => {
+        _state.houses.push(res.data.data)
+        _setState("houses", _state.houses)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
+  deleteHome(id) {
+    _houseApi.delete(id)
+      .then(res => {
+        let index = _state.houses.findIndex(h => h._id == id)
+        _state.houses.splice(index, 1)
+        _setState("houses", _state.houses)
+      })
   }
 }
