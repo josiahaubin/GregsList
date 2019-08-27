@@ -43,4 +43,7 @@ export default class HouseController {
   delete(id) {
     _houseService.deleteHome(id)
   }
+  bid(id) {
+    _houseService.bid(id)
+  }
 }
