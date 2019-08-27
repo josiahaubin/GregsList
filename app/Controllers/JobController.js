@@ -18,6 +18,6 @@ export default class JobController {
     _jobService.addSubscriber('jobs', _draw)
 
     //NOTE Retrieve data
-    _jobService
+    _jobService.getApiJobs()
   }
 }

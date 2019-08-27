@@ -35,4 +35,12 @@ export default class JobService {
   get Jobs() {
     return _state.jobs.map(j => new Job(j))
   }
+
+  getApiJobs() {
+    _jobApi.get()
+      .then(res => {
+        let jobData = res.data.data.map(j => new Job(j))
+        _setState('jobs', jobData)
+      })
+  }
 }
