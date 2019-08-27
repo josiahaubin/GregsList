@@ -1,5 +1,6 @@
 export default class Job {
   constructor(data) {
+    this._id = data._id
     this.company = data.company
     this.jobTitle = data.jobTitle
     this.hours = data.hours
@@ -9,11 +10,17 @@ export default class Job {
 
   get Template() {
     return `
-      <div class="col-4">
-        <h5>${this.company} - ${this.jobTitle}</h5>
-        <h6>Hours: ${this.hours} - Hourly Rate: ${this.rate}</h6>
-        <p>${this.description}</p>
-      </div>
+      <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">${this.company} - ${this.jobTitle}</h5>
+                    <p class="card-text">${this.description}</p>
+                    <p><sm>Hours: ${this.hours} - Hourly Rate: ${this.rate}</sm></p>
+                    //<button class="btn btn-info" onclick="app.controllers.carCtrl.bid('${this._id}')">Bid</button>
+                    //<button class="btn btn-danger" onclick="app.controllers.carCtrl.delete('${this._id}')">Delete Car</button>
+                </div >
+            </div >
+        </div >
     `
   }
 }
